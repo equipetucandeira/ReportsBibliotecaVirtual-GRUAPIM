@@ -12,9 +12,10 @@ import lombok.NoArgsConstructor;
 public class ReservationEvent {
     private Long reservationId;
     private Long bookId;
+    private String bookTitle;
     private Long userId;
-    private LocalDate reservationDateBegin;
-    private LocalDate reservationDateEnd;
+    private LocalDate reservationStartDate;
+    private LocalDate reservationEndDate;
 
     
 }

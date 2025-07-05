@@ -1,48 +1,46 @@
-{
-  "users": [
-    {
-      "name": "admin",
-      "password": "admin",
-      "tags": "administrator"
-    }
-  ],
-  "vhosts": [
-    {
-      "name": "/"
-    }
-  ],
-  "permissions": [
-    {
-      "user": "admin",
-      "vhost": "/",
-      "configure": ".*",
-      "write": ".*",
-      "read": ".*"
-    }
-  ],
-  "queues": [
-    {
-      "name": "emprestimos-queue",
-      "vhost": "/",
-      "durable": true
-    }
-  ],
-  "exchanges": [
-    {
-      "name": "emprestimos-exchange",
-      "vhost": "/",
-      "type": "direct",
-      "durable": true
-    }
-  ],
-  "bindings": [
-    {
-      "source": "emprestimos-exchange",
-      "vhost": "/",
-      "destination": "emprestimos-queue",
-      "destination_type": "queue",
-      "routing_key": "emprestimo-rout-key"
-    }
-  ]
+"users": [
+  {
+    "name": "admin",
+    "password": "admin",
+    "tags": "administrator"
+  }
+],
+"vhosts": [
+  {
+    "name": "/"
+  }
+],
+"permissions": [
+  {
+    "user": "admin",
+    "vhost": "/",
+    "configure": ".*",
+    "write": ".*",
+    "read": ".*"
+  }
+],
+"queues": [
+  {
+    "name": "emprestimos-queue",
+    "vhost": "/",
+    "durable": true
+  }
+],
+"exchanges": [
+  {
+    "name": "emprestimos-exchange",
+    "vhost": "/",
+    "type": "direct",
+    "durable": true
+  }
+],
+"bindings": [
+  {
+    "source": "emprestimos-exchange",
+    "vhost": "/",
+    "destination": "emprestimos-queue",
+    "destination_type": "queue",
+    "routing_key": "emprestimo-rout-key"
+  }
+]
 }
-
