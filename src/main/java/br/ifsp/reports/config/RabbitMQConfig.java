@@ -10,9 +10,9 @@ import org.springframework.amqp.core.Queue;;
 
 @Configuration
 public class RabbitMQConfig {
-  public static final String QUEUE_NAME = "reservation.queue";
-  public static final String EXCHANGE_NAME = "reservation.exchange";
-  public static final String ROUTING_KEY = "reservation.create";
+  public static final String QUEUE_NAME = "emprestimo.queue";
+  public static final String EXCHANGE_NAME = "emprestimo.exchange";
+  public static final String ROUTING_KEY = "emprestimo.create";
 
   @Bean
   public Queue reservationQueue() {

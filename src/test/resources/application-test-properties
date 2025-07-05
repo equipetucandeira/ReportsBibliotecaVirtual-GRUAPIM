@@ -1,0 +1,21 @@
+# application-test.properties
+
+spring.datasource.url=jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1
+spring.datasource.username=sa
+spring.datasource.password=
+spring.datasource.driver-class-name=org.h2.Driver
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+
+# RabbitMQ (mantém igual ao prod se não quiser mockar)
+spring.rabbitmq.host=localhost
+spring.rabbitmq.port=5672
+spring.rabbitmq.username=admin
+spring.rabbitmq.password=admin
+
+# Fila
+queue.name=emprestimos.queue
+
+# Outras configs que o app exige
+reservation.api.url=http://localhost:8081
