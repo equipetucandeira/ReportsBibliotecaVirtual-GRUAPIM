@@ -5,11 +5,12 @@ import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Component;
 
 import br.ifsp.reports.config.RabbitMQConfig;
+import br.ifsp.reports.dto.ReservationEvent;
 
 @Component
 public class ReportConsumer {
 @RabbitListener(queues = RabbitMQConfig.QUEUE_NAME)
-  public void listenReservationQueue(@Payload String message){
-    System.out.println(message);
+  public void listenReservationQueue(ReservationEvent event){
+    System.out.println(event);
   }
 }
