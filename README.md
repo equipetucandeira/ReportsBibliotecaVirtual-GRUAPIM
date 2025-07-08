@@ -100,6 +100,41 @@ spring.jpa.show-sql=true
 reservation.api.url=http://localhost:8080
 ```
 
+## 🐳 Docker (RabbitMQ + MySQL)
+```yaml
+services:
+  rabbitmq:
+    image: rabbitmq:management
+    container_name: rabbitmq
+    ports:
+      - 5672:5672
+      - 15672:15672
+    environment:
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: admin
+    volumes:
+      - rabbitmq-data:/var/lib/rabbitmq/
+      - ./rabbitmq-definitions.json:/etc/rabbitmq/definitions.json
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: reports
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  rabbitmq-data:
+  mysql-data:
+
+```
+
 ## 🛠️ Build & Run
 
 ```
