@@ -21,7 +21,7 @@ import br.ifsp.reports.dto.MostBorrowedDTO;
 import br.ifsp.reports.service.ReportService;
 
 @RestController
-@RequestMapping("/api/admin/report/")
+@RequestMapping("/api/admin/report")
 public class ReportController {
   @Autowired
   ReportService reportService;

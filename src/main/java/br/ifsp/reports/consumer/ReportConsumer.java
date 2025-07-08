@@ -19,7 +19,7 @@ public class ReportConsumer {
   }
 
   @RabbitListener(queues = RabbitMQConfig.QUEUE_NAME)
-  public void listenReservationQueue(ReservationEvent event) {
+  public void listenReservationQueue(@Payload ReservationEvent event) {
     System.out.println(event);
 
     Reservation reservation = new Reservation();
@@ -28,7 +28,7 @@ public class ReportConsumer {
     reservation.setBookTitle(event.getBookTitle());
     reservation.setStartDate(event.getReservationStartDate());
     reservation.setEndDate(event.getReservationEndDate());
-    
+    reservation.setUserId(event.getUserId());
     repository.save(reservation);
 
   }

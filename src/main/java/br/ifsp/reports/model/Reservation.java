@@ -17,7 +17,11 @@ public class Reservation {
   private Long bookId;
   private String bookTitle;
   private Long userId;
-  private LocalDate startDate;
+  public void setUserId(Long userId) {
+	this.userId = userId;
+}
+
+private LocalDate startDate;
   private LocalDate endDate;
 
   public Reservation() {
