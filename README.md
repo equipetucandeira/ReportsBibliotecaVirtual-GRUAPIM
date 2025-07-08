@@ -114,7 +114,6 @@ services:
       RABBITMQ_DEFAULT_PASS: admin
     volumes:
       - rabbitmq-data:/var/lib/rabbitmq/
-      - ./rabbitmq-definitions.json:/etc/rabbitmq/definitions.json
 
   mysql:
     image: mysql:8.0
