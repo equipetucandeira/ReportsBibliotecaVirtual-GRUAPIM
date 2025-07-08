@@ -44,18 +44,14 @@ Este serviço **escuta mensagens** da fila `reservation.queue`. As mensagens rep
 ### Exemplo de payload recebido:
 ```json
 {
-  "id": 2,
-  "book": {
-    "id": 1,
-    "title": "A Arte da Guerra",
-    "description": "Princípios estratégicos para a guerra e para a vida.",
-    "author": "Sun Tzu",
-    "quantity": 8,
-    "reserved": true
-  },
-  "startDate": "2025-07-03",
-  "endDate": "2025-07-10",
-  "active": true
+
+  "reservationId": 42,
+  "bookId": 7,
+  "bookTitle": "Dom Quixote",
+  "userId": 123,
+  "reservationStartDate": "2025-07-01",
+  "reservationEndDate": "2025-07-10"
+
 }
 ```
 
